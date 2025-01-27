@@ -12,7 +12,6 @@
 
 	# Networking
 	networking.hostName = "laptop_arstneio";
-	#networking.wireless.enable = true;
 	networking.networkmanager.enable = true;
 
 	# Set your time zone.
@@ -30,7 +29,7 @@
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	# Enable the X11 windowing system
-	services.xserver.enable = true;
+	#services.xserver.enable = true;
 
 	# Enable sound
 	security.rtkit.enable = true;
@@ -42,13 +41,16 @@
 		jack.enable = true;
 	};
 
-
 	# Enable display manager
+	services.displayManager.sddm.wayland.enable = true; # comment if you use X11 instead	
 	services.displayManager.sddm.enable = true;
 
 	# Enable XFCE4 desktop environment
-	services.xserver.desktopManager.xfce.enable = true;
-	services.displayManager.defaultSession = "xfce";	
+	#services.xserver.desktopManager.xfce.enable = true;
+	#services.displayManager.defaultSession = "xfce";	
+
+	# Enable Hyprland tiling window manager
+	programs.hyprland.enable = true;
 
 	# Define a user account
 	users.users.arstneio = {
