@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }
+{ config, lib, pkgs, ... }:
 
 {
 	imports = 
@@ -11,15 +11,15 @@
 	boot.loader.efi.canTouchEfiVariables = true;
 
 	# Networking
-	networking.hostname = "soxin";
-	networking.wireless.enable = true;
+	networking.hostName = "laptop_arstneio";
+	#networking.wireless.enable = true;
 	networking.networkmanager.enable = true;
 
 	# Set your time zone.
 	time.timeZone = "Europe/Rome";
 
 	# Select internationalization properties
-	i 18n.defaultLocale = "en_US.UTF-8";
+	i18n.defaultLocale = "en_US.UTF-8";
 	console = {
 		font = "Lat2-Terminus16";
 	#        keyMap = "us";
@@ -55,7 +55,7 @@
 		isNormalUser = true;
 		home = "/home/arstneio";
 		extraGroups = [ "wheel" ];
-		password = "bob"
+		password = "bob";
 		packages = with pkgs; [
 			tree
 			brave
@@ -73,6 +73,6 @@
 	];
 	
 	# System state
-	#system.stateVersion = "24.11";
+	system.stateVersion = "24.11";
 }
 	

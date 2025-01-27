@@ -1,5 +1,5 @@
 {
-	description = "My nix flake config"
+	description = "My nix flake config";
 
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -12,7 +12,7 @@
 		pkgs = nixpkgs.legacyPackages.x86_64-linux;
 	in
 	{
-		nixosConfiguration.arstneio = nixpkgs.lib.nixosSystem {
+		nixosConfigurations.arstneio = nixpkgs.lib.nixosSystem {
 			modules = [
 				./configuration.nix
 			];
