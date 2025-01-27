@@ -51,6 +51,8 @@
 
 	# Enable Hyprland tiling window manager
 	programs.hyprland.enable = true;
+	xdg.portal.enable = true;
+	xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
 	# Define a user account
 	users.users.arstneio = {
@@ -72,6 +74,9 @@
 		kitty
 		vim
 		neofetch
+		rofi-wayland # application search
+		waybar # hyprland top bar
+		dunst # hyprland notification manager
 	];
 	
 	# System state
